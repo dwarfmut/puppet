@@ -1,0 +1,6 @@
+---
+classes:
+ - ssh
+ - repos
+ - fail2ban
+ - htop

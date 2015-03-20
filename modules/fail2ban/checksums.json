@@ -1,0 +1,12 @@
+{
+  "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+  "Modulefile": "dedf11970d2516d20025a94f312d2c6d",
+  "templates/jail.local.erb": "c0154ccd3363df82f0c29024816c3ede",
+  "README.md": "1f552c68b6a07d5049d8f65697cd6f90",
+  "templates/fail2ban.local.erb": "ed48d01637a346091f9b14099a78ac8b",
+  "metadata.json": "de07d359e9a39b0c863f07847c4ea014",
+  "manifests/params.pp": "5ecda5e4862aa67998bada6188a611bd",
+  "manifests/init.pp": "70cb48ca119fbb1fc44ff7cdba5c2664",
+  "tests/init.pp": "641477fd63a9569d2ffddc04c34dd005",
+  "LICENSE": "d2794c0df5b907fdace235a619d80314"
+}
