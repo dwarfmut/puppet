@@ -12,7 +12,7 @@ define varnish::backend (
   $varnishincludes = '/etc/varnish/includes'
 
   define includefile {
-    concat {"${varnishincludes}/${title}.vcl}":
+    concat {"$varnishincludes/${title}.vcl}":
       owner => 'root',
       group => 'root',
       mode  => '0444',
