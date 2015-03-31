@@ -1,6 +1,6 @@
 class varnish {
 
-  varnish::config {'default':
+  class { 'varnish::config':
     varnish_address    => '192.168.0.1',
     varnish_port       => '80',
     varnishadm_address => '127.0.0.1',
