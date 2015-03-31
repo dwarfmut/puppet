@@ -1,6 +1,6 @@
 # Config Node
 node /seya/ {
   anchor { 'seya_begin' : } ->
-  class  { 'seya::varnish': } ->
+  class  { 'seya::vclconfig': } ->
   anchor { 'seya_end' : }
 }

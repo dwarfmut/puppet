@@ -1,4 +1,4 @@
-class seya::varnish {
+class seya::vclconfig {
 
   include varnish
 
