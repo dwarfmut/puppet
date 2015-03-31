@@ -1,0 +1,5 @@
+# Tomada de decisão para envio da request para o backend <%= @title %>
+if (req.http.host ~ "<%= @vhost %>" ) {
+  set req.backend_hint = <%= @title %>;
+}
+
