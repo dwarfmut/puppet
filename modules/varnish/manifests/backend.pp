@@ -10,7 +10,8 @@ define varnish::backend (
 
   $varnishincludes = '/etc/varnish/includes'
 
-  includefile { ['backends'] }
+  $includefiles = ['backends']
+  includefile { $includefiles: }
 
   concat::fragment { "$title-backend":
     target  => "$varnishincludes/backend.vcl",
@@ -19,7 +20,6 @@ define varnish::backend (
   }
 
 }
-
 
 define includefile {
   concat {"${varnishincludes}/${title}.vcl}":
