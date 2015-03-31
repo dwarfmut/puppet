@@ -10,7 +10,7 @@ define varnish::backend (
 ) {
 
   concat::fragment {"${title}-backend":
-    target  => "${varnish::vcl::include}/backends.vcl",
+    target  => "/etc/varnish/backends.vcl",
     content => template('varnish/backends.vcl.erb'),
     order   =>  '02',
   }
