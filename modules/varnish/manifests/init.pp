@@ -18,7 +18,7 @@ class varnish {
   }
 
   # concat init files to construct environment
-  concat {'/etc/varnish/recv.vcl':
+  concat {'/etc/varnish/recvs.vcl':
     owner =>  'root',
     group =>  'root',
     mode  =>  '0644',
