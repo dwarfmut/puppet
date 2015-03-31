@@ -1,5 +1,4 @@
 # Backend.pp
-
 define varnish::backend (
   $host,
   $port,
@@ -11,14 +10,6 @@ define varnish::backend (
 
   $varnishincludes = '/etc/varnish/includes'
 
-  define includefile {
-    concat {"$varnishincludes/${title}.vcl}":
-      owner => 'root',
-      group => 'root',
-      mode  => '0444',
-    }
-  }
-
   includefile { ['backends'] }
 
   concat::fragment { "$title-backend":
@@ -27,4 +18,13 @@ define varnish::backend (
     order   =>  '10',
   }
 
+}
+
+
+define includefile {
+  concat {"${varnishincludes}/${title}.vcl}":
+    owner => 'root',
+    group => 'root',
+    mode  => '0444',
+  }
 }
