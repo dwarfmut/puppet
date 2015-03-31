@@ -11,12 +11,6 @@ define varnish::backend (
 
   $backendsfile = '/etc/varnish/backends.vcl'
 
-  concat { $backendsfile:
-    owner => 'root',
-    group => 'root',
-    mode  => '0644',
-  }
-
   concat::fragment { "$title":
     target  => "$backendsfile",
     content => template('varnish/backends.vcl.erb'),
