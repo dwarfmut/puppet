@@ -4,12 +4,12 @@ case fact('osfamily')
   when 'AIX'
     username = 'root'
     groupname = 'system'
-    scriptname = 'concatfragments.rb'
+    scriptname = 'concatfragments.sh'
     vardir = default['puppetvardir']
   when 'Darwin'
     username = 'root'
     groupname = 'wheel'
-    scriptname = 'concatfragments.rb'
+    scriptname = 'concatfragments.sh'
     vardir = default['puppetvardir']
   when 'windows'
     username = 'Administrator'
@@ -25,7 +25,7 @@ case fact('osfamily')
   else
     username = 'root'
     groupname = 'root'
-    scriptname = 'concatfragments.rb'
+    scriptname = 'concatfragments.sh'
     vardir = default['puppetvardir']
 end
 

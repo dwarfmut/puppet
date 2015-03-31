@@ -91,7 +91,7 @@ describe 'concat', :type => :define do
         }))
       end
 
-      cmd = "#{concatdir}/bin/concatfragments.rb " +
+      cmd = "#{concatdir}/bin/concatfragments.sh " +
             "-o \"#{concatdir}/#{safe_name}/fragments.concat.out\" " +
             "-d \"#{concatdir}/#{safe_name}\""
 

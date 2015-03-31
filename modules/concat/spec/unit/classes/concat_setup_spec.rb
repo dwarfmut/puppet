@@ -16,9 +16,9 @@ describe 'concat::setup', :type => :class do
     end
 
     it do
-      should contain_file("#{concatdir}/bin/concatfragments.rb").with({
+      should contain_file("#{concatdir}/bin/concatfragments.sh").with({
         :mode   => '0755',
-        :source => 'puppet:///modules/concat/concatfragments.rb',
+        :source => 'puppet:///modules/concat/concatfragments.sh',
         :backup => false,
       })
     end
