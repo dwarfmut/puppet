@@ -1,5 +1,5 @@
 # Configuração de Backend do Site <%= @vhost %> Gerenciado Pelo Puppet
-backend <%= @title %>
+backend <%= @title %> {
   .host = "<%= @host %>";
   .port = "<%= @port %>";
   .probe = {
@@ -8,9 +8,9 @@ backend <%= @title %>
     "Host: <%= @vhost %>"
     "Connection: close";
     <%- if @expected_response -%>
-      .expected_response = <%= @exptected_response %>;
+    .expected_response = <%= @exptected_response %>;
     <%- else -%>
-      .expected_respose = 200;
+    .expected_respose = 200;
     <%- end -%>
   }
 }
