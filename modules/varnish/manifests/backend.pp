@@ -9,10 +9,20 @@ define varnish::backend (
   $between_bytes_timeout = "90s",
 ) {
 
-  $backendsfile = '/etc/varnish/backends.vcl'
+  $varnishincludes = '/etc/varnish/includes'
 
-  concat::fragment { "$title":
-    target  => "$backendsfile",
+  define includefile {
+    concat {"${varnishincludes}/${title}.vcl}":
+      owner => 'root',
+      group => 'root',
+      mode  => '0444',
+    }
+  }
+
+  includefile { ['backends'] }
+
+  concat::fragment { "$title-backend":
+    target  => "$varnishincludes/backend.vcl",
     content => template('varnish/backends.vcl.erb'),
     order   =>  '10',
   }
