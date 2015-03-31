@@ -1,0 +1,17 @@
+# Configuração de Backend do Site <%= @vhost %> Gerenciado Pelo Puppet
+backend <%= @title %>
+  .host = "<%= @host %>";
+  .port = "<%= @port %>";
+  .probe = {
+  .request =
+    "GET / HTTP/1.1"
+    "Host: <%= @vhost %>"
+    "Connection: close";
+    <%- if @expected_response -%>
+      .expected_response = <%= @exptected_response %>;
+    <%- else -%>
+      .expected_respose = 200;
+    <%- end -%>
+  }
+}
+
