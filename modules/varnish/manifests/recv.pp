@@ -1,4 +1,4 @@
-class varnish::recv (
+define varnish::recv (
   $hosts,
   $backend,
 ) {
