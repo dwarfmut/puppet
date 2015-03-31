@@ -22,7 +22,7 @@ define varnish::backend (
 }
 
 define includefile {
-  concat {"${varnishincludes}/${title}.vcl}":
+  concat {"${varnishincludes}/${title}.vcl":
     owner => 'root',
     group => 'root',
     mode  => '0444',
