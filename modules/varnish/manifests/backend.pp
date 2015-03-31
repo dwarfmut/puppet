@@ -15,7 +15,7 @@ define varnish::backend (
     mode  => '0644',
   }
 
-  concat::fragment {"${title}-backend":
+  concat::fragment {"${title}":
     target  => "/etc/varnish/backends.vcl",
     content => template('varnish/backends.vcl.erb'),
     order   =>  '01',
