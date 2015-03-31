@@ -9,14 +9,14 @@ define varnish::backend (
   $between_bytes_timeout = "90s",
 ) {
 
-  concat {"/etc/varnish/${title}.vcl":
+  concat {"/etc/varnish/backends.vcl":
     owner => 'root',
     group => 'root',
     mode  => '0644',
   }
 
-  concat::fragment {"${title}":
-    target  => "/etc/varnish/${title}",
+  concat::fragment {"$host":
+    target  => "/etc/varnish/backends.vcl",
     content => template('varnish/backends.vcl.erb'),
     order   =>  '02',
   }
