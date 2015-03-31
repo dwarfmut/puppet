@@ -11,7 +11,7 @@ define varnish::backend (
 
   concat::fragment {"${title}-backend":
     target  => "${varnish::vcl::include}/backends.vcl",
-    content => template('varnish/includes/backends.erb'),
+    content => template('varnish/backends.erb'),
     order   =>  '02',
   }
 
