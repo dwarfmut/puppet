@@ -1,18 +1,18 @@
-class varnish::config (
-  $varnish_address = {},
-  $varnish_port = {},
-  $varnishadm_address = {},
-  $varnishadm_port = {},
-  $storage = {},
-  $storage_size = {}
+# Backend.pp
+define varnish::config (
+  $host,
+  $port,
+  $vhost,
+  $url,
+  $cache,
+  $nocache,
+ 
 ) {
 
-  file { '/etc/sysconfig/varnish':
-    ensure  => 'present',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content =>  template('varnish/varnish.conf.erb'),
+  file { "/etc/varnish/${title}-site.vcl":
+    content => template("varnish/sites.vcl.erb"),
+    owner   => root,
+    group   => root,
   }
-  
+
 }
