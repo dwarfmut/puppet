@@ -1,5 +1,12 @@
-class ecb29decf136::varnish {
+class veja::varnish {
+
   include varnish
+
+  varnish::config { 'veja': 
+    host    => '189.91.161.129', 
+    port    => '80', 
+    vhost   => 'veja.abril.com.br',
+  }
 
   varnish::config { 'reinaldo': 
     host    => '189.91.161.129', 
@@ -9,7 +16,7 @@ class ecb29decf136::varnish {
     cache   =>  [
       {
       'url'  => '/blog/reinaldo/materia/dilma-vs-aecio',
-      'time' => '120s',
+      'time' => '120',
       },
     ],
     nocache => [

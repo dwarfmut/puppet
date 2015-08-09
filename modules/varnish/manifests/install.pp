@@ -1,5 +1,7 @@
 class varnish::install {
+
   package {'varnish':
-    ensure => '4.0.2-1.el7',
+    ensure => '4.0.3-1.el6',
   }
+
 }
