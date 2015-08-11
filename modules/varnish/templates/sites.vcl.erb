@@ -32,7 +32,7 @@ sub vcl_recv {
 }
 
 sub vcl_backend_response {
-  <% if $cache %><%- @cache.each do | cache_item | %>
+  <% if @cache %><%- @cache.each do | cache_item | %>
   if (bereq.http.host ~ "^(.*)<%= @vhost %>$" && bereq.url ~ "<%= cache_item['url'] %>") {
     set beresp.http.Cache-Control = "<%= cache_item['time'] %>"; 
     set beresp.ttl = <%= cache_item['time'] + 's' %>;

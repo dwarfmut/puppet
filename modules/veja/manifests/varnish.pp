@@ -1,13 +1,5 @@
 class veja::varnish {
 
-  include varnish
-
-  varnish::config { 'veja': 
-    host    => '189.91.161.129', 
-    port    => '80', 
-    vhost   => 'veja.abril.com.br',
-  }
-
   varnish::config { 'reinaldo': 
     host    => '189.91.161.129', 
     port    => '80', 
@@ -15,8 +7,8 @@ class veja::varnish {
     url     => '/blog/reinaldo',
     cache   =>  [
       {
-      'url'  => '/blog/reinaldo/materia/dilma-vs-aecio',
-      'time' => '120',
+      url  => '/blog/reinaldo/materia/dilma-vs-aecio',
+      time => '120',
       },
     ],
     nocache => [
@@ -24,6 +16,12 @@ class veja::varnish {
       '/rota/de/teste',
       '/testand/modulo/puppet',
     ],
+  }
+
+  varnish::config {'site':
+    host  => '127.0.0.1',
+    port  => '80',
+    vhost => 'veja.abril.com.br',
   }
 
 }
