@@ -31,4 +31,9 @@ define varnish::config (
     notify  => Service["varnishd"],
   }
 
+  varnish::haproxy { $title:
+    vhost => $vhost,
+  }
+
+
 }
